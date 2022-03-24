@@ -9,4 +9,6 @@ function index(req, res) {
   })
 }
 
-export { index }
+export { 
+  index 
+}
