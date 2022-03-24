@@ -1,4 +1,4 @@
-import { Income } from '../models/incomes.js'
+import { Income } from '../models/income.js'
 
 function index(req, res) {
 

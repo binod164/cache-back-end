@@ -1,4 +1,4 @@
-import { Budget } from '../models/budgets.js'
+import { Budget } from '../models/budget.js'
 
 function index(req, res) {
 
