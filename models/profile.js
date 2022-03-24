@@ -3,11 +3,34 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const profileSchema = new Schema({
-  email: {type: String, required: true, lowercase: true, unique: true},
-  name: String,
+  email: {
+    type: String, 
+    required: true, 
+    lowercase: true, 
+    unique: true
+  },
+  name: {
+    type: String,
+  },
   income: [incomeSchema],
   expense: [expenseSchema],
+  budget: [budgetSchema]
 }, {
+  timestamps: true
+})
+
+const budgetSchema = new Schema({
+  totalLimit: {
+    type: Number
+  },
+  category: {
+    type: String,
+    enum: ['Health','Housing','Grocery','Bills','Travel','Other']
+  },
+  categoryLimit: {
+    type: Number
+  },
+},{
   timestamps: true
 })
 
@@ -27,11 +50,14 @@ const incomeSchema = new Schema({
       let date = new Date()
       return date.setDate(date.getDate())
   }}
+}, {
+  timestamps: true
 })
 
 const expenseSchema = new Schema({
   category: {
     type: String,
+    enum: ['Health','Housing','Grocery','Bills','Travel','Other'],
     required: true
   },
   amount: {
@@ -45,6 +71,8 @@ const expenseSchema = new Schema({
       let date = new Date()
       return date.setDate(date.getDate())
   }}
+}, {
+  timestamps: true
 })
 
 
