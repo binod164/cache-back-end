@@ -1,12 +1,19 @@
 import mongoose from 'mongoose'
 
-const goalSchema = 
+const Schema = mongoose.Schema
 
-const profileSchema = new mongoose.Schema({
-  email: {type: String, required: true, lowercase: true, unique: true},
-  name: String,
-},{
-    timestamps: true,
+const profileSchema = new Schema({
+  email: {
+    type: String, 
+    required: true, 
+    lowercase: true, 
+    unique: true
+  },
+  name: {
+    type: String,
+  },
+}, {
+  timestamps: true
 })
 
 const Profile = mongoose.model('Profile', profileSchema)
