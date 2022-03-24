@@ -14,7 +14,8 @@ const profileSchema = new Schema({
   },
   income: [incomeSchema],
   expense: [expenseSchema],
-  budget: [budgetSchema]
+  budget: [budgetSchema],
+  goal: [goalSchema]
 }, {
   timestamps: true
 })
@@ -71,6 +72,17 @@ const expenseSchema = new Schema({
       let date = new Date()
       return date.setDate(date.getDate())
   }}
+}, {
+  timestamps: true
+})
+
+const goalSchema = new Schema({
+  name: {
+    type: String
+  },
+  amount: {
+    type: Number
+  }
 }, {
   timestamps: true
 })
