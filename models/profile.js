@@ -7,7 +7,7 @@ const profileSchema = new mongoose.Schema({
     timestamps: true,
 })
 
-let num = 1
+
 const Profile = mongoose.model('Profile', profileSchema)
 
 export {Profile}
