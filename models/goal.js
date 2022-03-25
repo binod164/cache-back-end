@@ -14,8 +14,6 @@ const goalSchema = new Schema({
     type: Schema.Types.ObjectId, ref: "Profile"
   },
 
-  }
-
 }, {
   timestamps: true
 })
