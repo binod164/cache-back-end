@@ -8,7 +8,10 @@ const goalSchema = new Schema({
   },
   amount: {
     type: Number
-  }
+  },
+  owner: {
+    type: Schema.Types.ObjectId, ref: "Profile"
+  },
 }, {
   timestamps: true
 })
