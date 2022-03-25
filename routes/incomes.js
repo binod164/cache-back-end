@@ -6,12 +6,11 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 router.post('/', incomesCtrl.create)
-
+router.get('/', incomesCtrl.index)
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 
-router.get('/', checkAuth, incomesCtrl.index)
-router.get('/:id', checkAuth, incomesCtrl.show)
+
 
 
 export {

@@ -17,14 +17,7 @@ function create(req, res) {
   .catch(err => res.json(err))
 }
 
-function show(req, res) {
-  Income.findById(req.params.id)
-  .then(income => res.json(income))
-  .catch(err => res.json(err))
-}
-
 export {
   index,
-  create,
-  show
+  create
 }
