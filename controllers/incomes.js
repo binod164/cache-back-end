@@ -17,7 +17,15 @@ function create(req, res) {
   .catch(err => res.json(err))
 }
 
+function deleteIncome(req, res) {
+  console.log(req.params.id)
+  Income.findByIdAndDelete(req.params.id)
+  .then(income => res.json(income))
+  .catch(err => res.json(err))
+}
+
 export {
   index,
-  create
+  create,
+  deleteIncome as delete,
 }
