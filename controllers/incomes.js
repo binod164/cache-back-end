@@ -14,7 +14,12 @@ function index (req, res) {
 function create(req, res) {
   req.body.owner = req.user.profile
   Income.create(req.body)
-  .then(income => res.json(income))
+  .then(income => {
+    income.populate('owner')
+    .then(populatedIncome => {
+      res.json(populatedIncome)
+    })
+  })
   .catch(err => res.json(err))
 }
 
