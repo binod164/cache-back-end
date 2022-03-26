@@ -13,6 +13,9 @@ const budgetSchema = new Schema({
     categoryLimit: {
       type: Number
     },
+    owner: {
+      type: Schema.Types.ObjectId, ref: "Profile"
+    },
   },{
     timestamps: true
   })
