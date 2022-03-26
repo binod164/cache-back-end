@@ -12,19 +12,13 @@ function index (req, res) {
 }
 
 function create(req, res) {
-  req.body.owner = req.user.profile
   Goal.create(req.body)
-  .then(goal => {
-    goal.populate('owner')
-    .then(populatedGoal => {
-      res.json(populatedGoal)
-    })
-  })
+  .then(goal => res.json(goal))
   .catch(err => res.json(err))
 }
 
-function show(req, res) {
-  Goal.findById(req.params.id)
+function deleteGoal(req, res) {
+  Goal.findByIdAndDelete(req.params.id)
   .then(goal => res.json(goal))
   .catch(err => res.json(err))
 }
@@ -32,6 +26,5 @@ function show(req, res) {
 export {
   index,
   create,
-  show
+  deleteGoal as delete,
 }
-
