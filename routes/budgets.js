@@ -7,12 +7,12 @@ const router = Router()
 /*---------- Public Routes ----------*/
 
 router.post('/', budgetsCtrl.create)
+router.get('/', budgetsCtrl.index)
 
 /*---------- Protected Routes ----------*/
 
 router.use(decodeUserFromToken)
 
-// router.get('/', checkAuth, budgetsCtrl.index)
 
 
 export{
