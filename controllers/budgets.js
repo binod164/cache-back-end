@@ -23,8 +23,15 @@ function deleteBudget(req, res) {
   .catch(err => res.json(err))
 }
 
+function update(req, res) {
+  Budget.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(budget => res.json(budget))
+  .catch(err => res.json(err))
+}
+
 export {
   create,
   index,
-  deleteBudget as delete
+  deleteBudget as delete,
+  update
 }
