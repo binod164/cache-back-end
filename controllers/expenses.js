@@ -12,19 +12,14 @@ function index (req, res) {
 }
 
 function create(req, res) {
-  req.body.owner = req.user.profile
   Expense.create(req.body)
-  .then(expense => {
-    expense.populate('owner')
-    .then(populatedExpense => {
-      res.json(populatedExpense)
-    })
-  })
+  .then(expense => res.json(expense))
   .catch(err => res.json(err))
 }
 
-function show(req, res) {
-  Expense.findById(req.params.id)
+function deleteExpense(req, res) {
+  console.log(req.params.id)
+  Expense.findByIdAndDelete(req.params.id)
   .then(expense => res.json(expense))
   .catch(err => res.json(err))
 }
@@ -32,5 +27,5 @@ function show(req, res) {
 export {
   index,
   create,
-  show
+  deleteExpense as delete
 }
