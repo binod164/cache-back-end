@@ -23,8 +23,15 @@ function deleteGoal(req, res) {
   .catch(err => res.json(err))
 }
 
+function update(req, res) {
+  Goal.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(goal => res.json(goal))
+  .catch(err => res.json(err))
+}
+
 export {
   index,
   create,
   deleteGoal as delete,
+  update
 }

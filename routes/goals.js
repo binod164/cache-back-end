@@ -9,6 +9,7 @@ const router = Router()
 router.get('/', goalsCtrl.index)
 router.post('/', goalsCtrl.create)
 router.delete('/:id', goalsCtrl.delete)
+router.put('/:id', goalsCtrl.update)
 
 /*---------- Protected Routes ----------*/
 
