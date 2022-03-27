@@ -6,11 +6,19 @@ const budgetSchema = new Schema({
     totalLimit: {
       type: Number
     },
-    category: {
-      type: String,
-      enum: ['Health','Housing','Grocery','Bills','Travel','Other']
+    healthLimit: {
+      type: Number
     },
-    categoryLimit: {
+    housingLimit: {
+      type: Number
+    },
+    groceryLimit: {
+      type: Number
+    },
+    billsLimit: {
+      type: Number
+    },
+    travelLimit: {
       type: Number
     },
     owner: {
