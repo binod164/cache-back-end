@@ -6,14 +6,13 @@ const router = Router()
 
 /*---------- Public Routes ----------*/
 
-router.get('/', goalsCtrl.index)
-router.post('/', goalsCtrl.create)
-router.delete('/:id', goalsCtrl.delete)
-router.put('/:id', goalsCtrl.update)
 
 /*---------- Protected Routes ----------*/
-
 router.use(decodeUserFromToken)
+router.get('/', checkAuth, goalsCtrl.index)
+router.post('/', checkAuth, goalsCtrl.create)
+router.delete('/:id', checkAuth, goalsCtrl.delete)
+router.put('/:id', checkAuth, goalsCtrl.update)
 
 
 export {
