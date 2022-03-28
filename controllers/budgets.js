@@ -31,6 +31,7 @@ function deleteBudget(req, res) {
 
 function update(req, res) {
   Budget.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .populate('owner')
   .then(budget => res.json(budget))
   .catch(err => res.json(err))
 }

@@ -31,6 +31,7 @@ function deleteGoal(req, res) {
 
 function update(req, res) {
   Goal.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .populate('owner')
   .then(goal => res.json(goal))
   .catch(err => res.json(err))
 }
