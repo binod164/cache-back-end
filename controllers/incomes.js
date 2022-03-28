@@ -1,7 +1,7 @@
 import { Income } from '../models/income.js'
 
 function index (req, res) {
-  Income.find({})
+  Income.find({owner: req.user.profile})
   .populate('owner')
   .then(incomes => {
     res.json(incomes)

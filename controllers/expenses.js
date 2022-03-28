@@ -1,7 +1,8 @@
 import { Expense } from '../models/expense.js'
 
 function index (req, res) {
-  Expense.find({})
+  console.log(req.user)
+  Expense.find({owner: req.user.profile})
   .populate('owner')
   .then(expenses => {
     res.json(expenses)
