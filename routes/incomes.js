@@ -11,7 +11,6 @@ router.post('/', checkAuth, incomesCtrl.create)
 router.get('/', checkAuth, incomesCtrl.index)
 router.delete('/:id', checkAuth, incomesCtrl.delete)
 
-
 export {
   router
 }
