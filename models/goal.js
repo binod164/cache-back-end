@@ -6,14 +6,15 @@ const goalSchema = new Schema({
   name: {
     type: String
   },
+  currentAmount: {
+    type: Number
+  },
   amount: {
     type: Number
-
   },
   owner: {
     type: Schema.Types.ObjectId, ref: "Profile"
   },
-
 }, {
   timestamps: true
 })
