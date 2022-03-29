@@ -1,7 +1,7 @@
 import { Goal } from '../models/goal.js'
 
 function index (req, res) {
-  Goal.find({})
+  Goal.find({owner: req.user.profile})
   .populate('owner')
   .then(goals => {
     res.json(goals)
