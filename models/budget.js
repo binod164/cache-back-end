@@ -3,8 +3,11 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const budgetSchema = new Schema({
+    year:{
+      type: String
+    },
     month: {
-      type: String,
+      type: String
     },
     totalLimit: {
       type: Number
