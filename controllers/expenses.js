@@ -13,6 +13,8 @@ function index (req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile
+  let expenseDate = new Date(req.body.date)
+  req.body.date = new Date( expenseDate.getTime() + Math.abs(expenseDate.getTimezoneOffset()*60000))
   Expense.create(req.body)
   .then(expense => {
     expense.populate('owner')
