@@ -18,8 +18,8 @@ const incomeSchema = new Schema({
     default: function(){
       let date = new Date()
       return date.setDate(date.getDate())
-
-  }},
+    }
+  },
   owner: {
     type: Schema.Types.ObjectId, ref: "Profile"
   },
