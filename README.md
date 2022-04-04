@@ -7,30 +7,10 @@ Cache is a budgeting app where users can manage their expenses, income and savin
 Click [here](https://cachefrontend.herokuapp.com/) to view the app. 
 
 
-## Project Planning Materials  
+### Project Planning Materials  
 [ERD](https://whimsical.com/cache-budget-app-erd-Vxzr1JRk8dCMnrtuzNmMjN">)
 
 [Trello](https://trello.com/b/VL89qktx/cache-budget-app)
-
-# Wireframe
-![Wireframe](public/wireframe.png)  
- 
-
-# Screenshots
-
-<table>
-  <tr>
-    <td><img src="./public/ReadMePics/LandingPage.png" width="270" height="480" /></td>
-    <td><img src="./public/ReadMePics/BudgetPage.png" width="270" height="480" /></td>
-    <td><img src="./public/ReadMePics/SpendingPage.png" width="270" height="480" /></td>
-  </tr>
-  <tr>
-    <td><img src="./public/ReadMePics/TransPage.png" width="270" height="480" /></td>
-    <td><img src="./public/ReadMePics/ProgressBars.png" width="270" height="480" /></td>
-    <td><img src="./public/ReadMePics/GoalPage.png" width="270" height="480" /></td>
-  </tr>
- </table>
-
 
 
 # Technologies Used
@@ -58,14 +38,3 @@ Click [here](https://cachefrontend.herokuapp.com/) to view the app.
   ![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 
-# Next Steps
-
-- [ ] Users can view summaries of their previous monthly budgets
-- [ ] Format date with momentjs
-- [ ] Users can create recurring incomes and expenses which are automatically added according to the specified time period
-- [ ] Import previous budget data into next months budget
-- [ ] Sorting transactions by date - most recent at the top
-- [ ] Implement Light/Dark mode
-- [ ] Add animation to add income and expense buttons on "Add" page
-- [ ] Create a subscriptions model and the ability for users to add and track their subscriptions
-- [ ] Utilize an api to fetch logos and information for streaming services/ platforms for subscriptions
